@@ -33,7 +33,31 @@ function generatePassword() {
     hasSymbols = window.confirm('Would you like symbols?')
   }
   
+  if (hasUppercase) {
+    allowed += uppercase;
+  }
   
+  if (hasLowercase) {
+    allowed += lowercase;
+  }
+  
+  if (hasNumbers) {
+    allowed += numbers;
+  }
+  
+  if (hasSymbols) {
+    allowed += symbols;
+  }
+  
+  console.log('allowed variable', allowed)
+  
+  for (var i = 0; i < pwdLength; i++) {
+    password += allowed.charAt(Math.floor(Math.random() * allowed.length))
+  }
+
+  // passwordText.value = password;
+  console.log(password)
+  return password
 }
 
 // Write password to the #password input
