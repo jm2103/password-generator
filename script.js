@@ -20,6 +20,19 @@ function generatePassword() {
   }
   console.log('passwords length', pwdLength)
 
+  var hasUppercase = window.confirm('Would you like uppercase letters?')
+  var hasLowercase = window.confirm('Would you like lowercase letters?')
+  var hasNumbers = window.confirm('Would you like numbers?')
+  var hasSymbols = window.confirm('Would you like symbols?')
+
+  while (!hasUppercase && !hasLowercase && !hasNumbers && !hasSymbols) {
+    alert('You must choose at least one character type')
+    hasUppercase = window.confirm('Would you like uppercase letters?')
+    hasLowercase = window.confirm('Would you like lowercase letters?')
+    hasNumbers = window.confirm('Would you like numbers?')
+    hasSymbols = window.confirm('Would you like symbols?')
+  }
+  
   
 }
 
